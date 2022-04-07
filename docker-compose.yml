@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  starknet:
+    image: shardlabs/starknet-devnet:0.1.19
+    ports:
+      - "5000:5000"
+
+  ganache:
+    image: trufflesuite/ganache:v7.0.3
+    ports:
+      - "8545:8545"

@@ -1,0 +1,22 @@
+.errorTitle {
+  margin-top: 40px;
+  color: var(--warning-color);
+}
+
+.errorContent {
+  font-size: 0.7em;
+  margin-top: 10px;
+  display: block;
+  line-height: 1.5em;
+  color: var(--warning-color);
+}
+
+.labelAmount {
+  margin: 0 0 30px 0;
+  display: block;
+  font-size: .6em;
+  .inputAmount {
+    display: block;
+  }
+} 
+

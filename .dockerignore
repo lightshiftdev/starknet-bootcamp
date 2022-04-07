@@ -1,0 +1,5 @@
+.git
+node_modules
+packages/contracts/artifacts
+packages/contracts/cache
+packages/contracts/starknet-artifacts

@@ -1,0 +1,40 @@
+name: Contracts - Test Suite
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - '*'
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  contracts-test-suite:
+    runs-on: ubuntu-latest
+
+    env:
+      FORCE_COLOR: true
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          cacheh: 'yarn'
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - run: yarn install
+      - run: yarn workspace @starknet-bootcamp/contracts compile
+      - run: yarn workspace @starknet-bootcamp/contracts lint
+      - run: yarn workspace @starknet-bootcamp/contracts test
+
+      - name: Run Slither
+        uses: crytic/slither-action@v0.1.0
+        continue-on-error: true
+        id: slither
+        with:
+          ignore-compile: true
+          target: packages/contracts

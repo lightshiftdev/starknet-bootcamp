@@ -1,0 +1,120 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+
+*:root {
+	--text-color: #aaaaaa;
+	--text-color-en: #ffffff;
+	--primary-color: #004db1;
+	--primary-color-en: #0059ce;
+	--warning-color: #c90505;
+	--hr-color: #D8D8D8;
+	--background-color: #222222;
+	--input-bg-color: #464646;
+	--input-bg-color-en: #4e4e4e;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	line-height: 1.75em;
+	font-size: 18px;
+	background-color: var(--background-color);
+	color: var(--text-color);
+  height: 100%;
+}
+
+.simple-container {
+	max-width: 675px;
+	margin: 0 auto;
+	padding-top: 70px;
+	padding-bottom: 20px;
+	padding: 0 20px;
+}
+
+.simple-print {
+	fill: var(--text-color-en);
+	stroke: var(--text-color-en);
+}
+.simple-print svg {
+	height: 100%;
+}
+
+.simple-close {
+	color: var(--text-color-en);
+	border-color: var(--text-color-en);
+}
+
+.simple-ext-info {
+	border-top: 1px solid var(--text-color);
+}
+
+p {
+	font-size: 1em;
+}
+
+h1 {
+	font-size: 2em;
+	line-height: 34px;
+}
+
+h2 {
+	font-size: 1.2em;
+	line-height: 25px;
+}
+
+h3 {
+	font-size: 1em;
+	line-height: 27px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px solid var(--hr-color);
+	border-top: 1px solid var(--hr-color);
+}
+
+hr {
+	height: 1px;
+	background-color: var(--hr-color);
+	border: none;
+	width: 100%;
+	margin: 0px;
+}
+
+a[href] {
+	color: var(--primary-color);
+}
+
+a[href]:hover {
+	color: var(--primary-color-en);
+}
+
+img {
+	max-width: 100%;
+}
+
+li {
+	line-height: 1.5em;
+}
+
+@media (min-width: 1921px) {
+	body {
+		font-size: 18px;
+	}
+}
+
+input {
+	color: var(--text-color);
+	background-color: var(--input-bg-color);
+	font-weight: bold;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+}
+
+input:active,
+input:hover {
+	color: var(--text-color-en);
+	background-color: var(--input-bg-color-en);
+}

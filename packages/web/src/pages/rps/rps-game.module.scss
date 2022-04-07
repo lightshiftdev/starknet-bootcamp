@@ -1,0 +1,25 @@
+.gameBoard {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 50px 0;
+}
+
+.waiteAMove {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.errorTitle {
+  margin-top: 40px;
+  color: var(--warning-color);
+}
+
+.errorContent {
+  font-size: 0.7em;
+  margin-top: 10px;
+  display: block;
+  line-height: 1.5em;
+  color: var(--warning-color);
+}

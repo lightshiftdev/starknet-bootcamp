@@ -1,0 +1,4 @@
+{
+  "detectors_to_exclude": "similar-names,naming-convention,timestamp,too-many-digits,incorrect-equality",
+  "filter_paths": "node_modules"
+}

@@ -1,0 +1,9 @@
+artifacts
+starknet-artifacts
+cache
+node_modules
+src/types
+deployments/localhost
+.vscode
+starknet-artifacts
+starknet-deployments

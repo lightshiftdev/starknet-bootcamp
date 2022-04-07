@@ -1,0 +1,26 @@
+{
+  "name": "@starknet-bootcamp/monorepo",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/@openzeppelin/**",
+      "**/@nomiclabs/**",
+      "**/@typechain/**",
+      "**/typechain/**",
+      "**/typescript",
+      "**/ts-node",
+      "@typescript-eslint/**"
+    ]
+  },
+  "scripts": {
+    "compile": "yarn workspace @starknet-bootcamp/contracts run compile",
+    "deploy:starknet:devnet": "yarn workspace @starknet-bootcamp/contracts run deploy:starknet:devnet",
+    "deploy:starknet:testnet": "yarn workspace @starknet-bootcamp/contracts run deploy:starknet:testnet",
+    "test": "yarn workspace @starknet-bootcamp/contracts run test",
+    "ui:start": "yarn workspace @starknet-bootcamp/web run dev",
+    "ui:build": "yarn workspace @starknet-bootcamp/web run build"
+  }
+}

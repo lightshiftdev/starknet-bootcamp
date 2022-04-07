@@ -1,0 +1,35 @@
+@import "./reset.css";
+@import "./theme.css";
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+h1 {
+	margin: 20px 0;
+}
+
+p {
+	margin: 25px 0;
+}
+
+button {
+	padding: 18px 36px;
+	border-radius: 20px;
+	border: none;
+}
+
+.exercises-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 20px;
+}
+
+.exercises-info > div {
+	flex: 1;
+}
+
+button {
+	cursor: pointer;
+}

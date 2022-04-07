@@ -1,0 +1,11 @@
+.primaryButton {
+  color: var(--text-color);
+	background-color: var(--primary-color);
+	cursor: pointer;
+	font-weight: bold;
+
+	&:hover {
+		color: var(--text-color-en);
+		background-color: var(--primary-color-en);
+	}
+}
