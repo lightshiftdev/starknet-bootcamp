@@ -115,4 +115,4 @@ Your task will be to implement a Rock Paper Scissor game with the following mech
 # About
 
 This repository was put together with love by [Lightshift
-Capital][lightshift-capital].
+Capital][lightshift].
