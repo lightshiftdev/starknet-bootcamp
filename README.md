@@ -27,10 +27,10 @@ teach you all the practical details of programming in Starknet, ahead of the
 
 It consists of three main components:
 
-* *packages/contracts* a Hardhat project, with all the starknet goodness
+- _packages/contracts_ a Hardhat project, with all the starknet goodness
   pre-installed, and some sample code;
-* *packages/web* A next.js app ready to interact with starknet contracts;
-* *docker-compose.yml* A docker setup that makes it easy to manage the Starknet
+- _packages/web_ A next.js app ready to interact with starknet contracts;
+- _docker-compose.yml_ A docker setup that makes it easy to manage the Starknet
   & Ethereum nodes required for development.
 
 The entire project is intended for local development only (We use
@@ -99,6 +99,18 @@ yarn ui:start
 ```
 
 And go to `http://localhost:3000`.
+
+## Your (future) tasks
+
+The repository is already setup with a sample `Counter` contract, as well as an `NFT`, and some boilerplate code that will be useful for future tasks.
+
+During the bootcamp, we'll start by getting familiar with cairo code, by doing a code walkthrough of both `Counter` and `NFT`
+
+Your task will be to implement a Rock Paper Scissor game with the following mechanics:
+
+1. Provide the ability for two players to compete in a rock paper scissor game
+2. The winner of a game is gifted with a newly minted NFT
+3. This NFT can later be transfered to an L1 contract throught using cross-chain messaging.
 
 # About
 
