@@ -1,7 +1,8 @@
 version: "3.9"
 services:
   starknet:
-    image: shardlabs/starknet-devnet:0.1.19
+    image: shardlabs/starknet-devnet:0.1.21
+    entrypoint: ["starknet-devnet", "--host", "0.0.0.0", "--lite-mode"]
     ports:
       - "5000:5000"
 
