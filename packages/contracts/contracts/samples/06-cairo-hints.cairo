@@ -1,5 +1,3 @@
-from starkware.cairo.common.serialize import serialize_word
-
 func main():
     alloc_locals
 
