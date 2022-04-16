@@ -14,6 +14,8 @@
 [faucet]: https://faucet.goerli.starknet.io/
 [slides1]: https://docs.google.com/presentation/d/1hOXJYoOOqc2YS9oOlc6XrLUxX6ia2MsUkJySiaP8AD0/edit?usp=sharing
 [explorer]: https://goerli.voyager.online/
+[cairo-playground]: https://www.cairo-lang.org/playground/
+[starknet-playground]: https://starknet.io/playground/
 
 ![Starknet Logo](./assets/starknet-logo.png)
 
@@ -47,6 +49,8 @@ make up the vast majority of this bootcamp.
 [Bootcamp slides - Day 1][slides1]
 [Goerli Faucet][faucet]
 [Voyager Explorer][explorer]
+[Cairo playground][cairo-playground]
+[Starknet playground][starknet-playground]
 
 # Setup Guide
 
