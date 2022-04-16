@@ -11,6 +11,9 @@
 [next.js]: https://nextjs.org/
 [ganache]: https://trufflesuite.com/ganache/index.html
 [devnet]: https://github.com/Shard-Labs/starknet-devnet
+[faucet]: https://faucet.goerli.starknet.io/
+[slides1]: https://docs.google.com/presentation/d/1hOXJYoOOqc2YS9oOlc6XrLUxX6ia2MsUkJySiaP8AD0/edit?usp=sharing
+[explorer]: https://goerli.voyager.online/
 
 ![Starknet Logo](./assets/starknet-logo.png)
 
@@ -22,7 +25,7 @@ If you're here, it's likely you signed up to join us at DevConnect Amsterdam
 Details on the bootcamp itself are provided in the [Notion page][notion].
 
 This repo is your main tool to get going through the bootcamp, and hopefully
-teach you all the practical details of programming in Starknet, ahead of the
+teach you all the practical details programming in Starknet, ahead of the
 [Starknet Hackathon][hackathon].
 
 It consists of three main components:
@@ -38,6 +41,12 @@ The entire project is intended for local development only (We use
 and favors JavaScript tooling instead of Python. We opted for this since that's
 what most commonly known by Solidity developers, which according to sign ups,
 make up the vast majority of this bootcamp.
+
+# Useful links
+
+[Bootcamp slides - Day 1][slides1]
+[Goerli Faucet][faucet]
+[Voyager Explorer][explorer]
 
 # Setup Guide
 
