@@ -10,8 +10,9 @@
       "**/@nomiclabs/**",
       "**/@typechain/**",
       "**/typechain/**",
-      "**/typescript",
-      "**/ts-node",
+      "**/typescript/**",
+      "**/ts-node/**",
+      "**/mocha/**",
       "@typescript-eslint/**"
     ]
   },
