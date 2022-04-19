@@ -3,6 +3,9 @@ services:
   starknet:
     image: shardlabs/starknet-devnet:0.1.21
     entrypoint: ["starknet-devnet", "--host", "0.0.0.0", "--lite-mode"]
+    # worth trying with `--lite-mode` yet
+    # warning: not very well tested yet. 1st suspect if something goes wrong
+    # entrypoint: ["starknet-devnet", "--host", "0.0.0.0", "--lite-mode"]
     ports:
       - "5000:5000"
 
