@@ -105,7 +105,13 @@ yarn run test
 
 If you get only green tests here, it means you're done and ready to rock 🚀
 
-### 7. Bonus: Get the UI running
+### 7. Deploy to local nodes
+
+```bash
+yarn run deploy:starknet:devnet
+```
+
+### 8. Bonus: Get the UI running
 
 ```bash
 yarn ui:start
