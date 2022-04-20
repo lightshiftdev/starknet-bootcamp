@@ -17,11 +17,15 @@ from starkware.cairo.common.math import assert_le
 # functions with no arguments store a single-value
 # functions with arguments work as key-value maps
 @storage_var
-func counter() -> (value: felt):
+func counter() -> (value : felt):
 end
 
 @storage_var
-func max_inc()->(value: felt):
+func max_inc() -> (value : felt):
+end
+
+@event
+func incremented(inc : felt):
 end
 
 # the constructor decorator is what you'd expect
@@ -30,31 +34,35 @@ end
 #   syscall_ptr allows access to system call, such as read() and write() of storage values
 #   pedersen_ptr and range_check_ptr correspond to the two imported builtints. Storage values also require these behind the scenes
 @constructor
-func constructor{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(initial: felt, max: felt):
+func constructor{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(
+        initial : felt, max : felt):
     max_inc.write(max)
     counter.write(initial)
+    incremented.emit(initial)
     return ()
 end
 
 # view functions are just what you'd expect. They can read state, but not modify it
 # (not actually enforced by the compiler at the moment, so you may run into some weird behaviour)
 @view
-func read{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}()->(value: felt):
+func read{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}() -> (value : felt):
     let (value) = counter.read()
     return (value)
 end
 
 # this one actually mutates state
 @external
-func increment{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}(inc: felt):
+func increment{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(inc : felt):
     let (max) = max_inc.read()
     assert_le(inc, max)
     let (current) = counter.read()
     counter.write(current + inc)
+
+    incremented.emit(inc)
     return ()
 end
 
-func _increment(value: felt, inc: felt) -> (new_value: felt):
+func _increment(value : felt, inc : felt) -> (new_value : felt):
     tempvar foo = (value + inc)
 
     return (foo)
