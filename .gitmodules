@@ -1,6 +1,3 @@
 [submodule "packages/contracts/openzeppelin-cairo"]
 	path = packages/contracts/openzeppelin_cairo
-	url = git@github.com:OpenZeppelin/cairo-contracts
-[submodule "packages/contracts/openzeppelin_cairo"]
-	path = packages/contracts/openzeppelin_cairo
-	url = git@github.com:OpenZeppelin/cairo-contracts
+	url = https://github.com/OpenZeppelin/cairo-contracts.git
