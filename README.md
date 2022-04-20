@@ -56,13 +56,19 @@ make up the vast majority of this bootcamp.
 
 Follow these steps to setup the repo and get ready for the bootcamp
 
-- [1. Clone the repo](#1-clone-the-repo)
-- [2. Install requirements](#2-install-requirements)
-- [3. Install packages](#3-install-packages)
-- [4. Compile the contracts](#4-compile-the-contracts)
-- [5. Start the development nodes](#5-start-the-development-nodes)
-- [6. Run the test suite](#6-run-the-test-suite)
-- [7. Bonus: Get the UI running](#7-bonus-get-the-ui-running)
+- [Starknet Bootcamp - DevConnect Amsterdam 2022](#starknet-bootcamp---devconnect-amsterdam-2022)
+- [Useful links](#useful-links)
+- [Setup Guide](#setup-guide)
+    - [1. Clone the repo](#1-clone-the-repo)
+    - [2. Install Requirements](#2-install-requirements)
+    - [3. Install packages](#3-install-packages)
+    - [4. Compile the contracts](#4-compile-the-contracts)
+    - [5. Start the development nodes](#5-start-the-development-nodes)
+    - [6. Run the test suite](#6-run-the-test-suite)
+    - [7. Deploy to local nodes](#7-deploy-to-local-nodes)
+    - [8. Bonus: Get the UI running](#8-bonus-get-the-ui-running)
+  - [Your (future) tasks](#your-future-tasks)
+- [About](#about)
 
 ### 1. Clone the repo
 
@@ -96,6 +102,9 @@ While in the repository's root directory, `docker-compose up -d` will spin up tw
 
 - [`starknet-devnet`][starknet-devnet]
 - [`ganache`][ganache]
+
+Note: if you're using Mac, `starknet-devnet` attempts to use port 5000, which is already being used by the Airplay Receiver on Mac. To disable it,
+go to System Preferences > Sharing > Airplay Receiver. Here's [one solution](https://medium.com/pythonistas/port-5000-already-in-use-macos-monterey-issue-d86b02edd36c).
 
 ### 6. Run the test suite
 
