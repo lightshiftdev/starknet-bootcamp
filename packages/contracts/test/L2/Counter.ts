@@ -17,7 +17,7 @@ describe("Counter", function () {
     expect(value).to.equal(10n);
   });
 
-  it.only("can increment by the given argument", async () => {
+  it("can increment by the given argument", async () => {
     await contract.invoke("increment", { inc: 5 });
 
     const { value } = await contract.call("read");

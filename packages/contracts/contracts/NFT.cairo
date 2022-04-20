@@ -17,31 +17,23 @@ from openzeppelin.token.erc721.library import (
 
 #
 # Custom logic
-# 
+#
 
 @storage_var
-func l1_contract_storage() -> (address: felt):
+func l1_contract_storage() -> (address : felt):
 end
 
 @storage_var
-func minter_storage() -> (game: felt):
+func minter_storage() -> (game : felt):
 end
 
 @storage_var
-func next_token_id_storage() -> (next_token_id: felt):
+func next_token_id_storage() -> (next_token_id : felt):
 end
 
 @constructor
-func constructor{
-        syscall_ptr: felt*,
-        pedersen_ptr: HashBuiltin*,
-        range_check_ptr
-    }(
-        name: felt,
-        symbol: felt,
-        minter: felt,
-        l1_contract: felt
-    ):
+func constructor{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(
+        name : felt, symbol : felt, minter : felt, l1_contract : felt):
     ERC721_initializer(name, symbol)
 
     minter_storage.write(minter)
@@ -51,50 +43,7 @@ func constructor{
 end
 
 @external
-func mint{
-        syscall_ptr: felt*,
-        pedersen_ptr: HashBuiltin*,
-        range_check_ptr
-    }(
-        user: felt,
-    ):
-
-    #
-    # TODO
-    #
-
-    return()
-end
-
-
-@external
-func bridge_to_l1{
-        syscall_ptr: felt*,
-        pedersen_ptr:HashBuiltin*,
-        range_check_ptr
-    }(
-        l1_user: felt,
-        token_id: felt
-    ):
-
-    # 
-    # TODO
-    #
-
-    return()
-end
-
-@l1_handler
-func bridge_to_l2{
-        syscall_ptr: felt*,
-        pedersen_ptr:HashBuiltin*,
-        range_check_ptr
-    }(
-        from_address: felt,
-        l2_user: felt,
-        token_id: felt
-    ):
-
+func mint{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(user : felt):
     #
     # TODO
     #
@@ -102,18 +51,33 @@ func bridge_to_l2{
     return ()
 end
 
-func felt_to_uint256{
-        syscall_ptr: felt*,
-        pedersen_ptr: HashBuiltin*,
-        range_check_ptr
-    }(
-        x: felt
-    ) -> (x_ : Uint256):
+@external
+func bridge_to_l1{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(
+        l1_user : felt, token_id : felt):
+    #
+    # TODO
+    #
+
+    return ()
+end
+
+@l1_handler
+func bridge_to_l2{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(
+        from_address : felt, l2_user : felt, token_id : felt):
+    #
+    # TODO
+    #
+
+    return ()
+end
+
+func felt_to_uint256{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(
+        x : felt) -> (x_ : Uint256):
     let (high, low) = split_felt(x)
 
     return (Uint256(low=low, high=high))
 end
- 
+
 #
 # Standard ERC721 ABI - No need to look into this
 #
