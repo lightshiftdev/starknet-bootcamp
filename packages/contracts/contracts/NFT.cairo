@@ -58,11 +58,16 @@ func mint{
     }(
         user: felt,
     ):
+    let (caller) = get_caller_address()
+    let (minter) = minter_storage.read()
+    let (next_token_id) = next_token_id_storage.read()
+    next_token_id_storage.write(next_token_id + 1)
 
-    #
-    # TODO
-    #
+    assert caller = minter
 
+    let (uint256_token_id) = felt_to_uint256(next_token_id)
+
+    ERC721_mint(user, uint256_token_id)
     return()
 end
 
@@ -77,9 +82,19 @@ func bridge_to_l1{
         token_id: felt
     ):
 
-    # 
-    # TODO
-    #
+    let (uint256_token_id) = felt_to_uint256(token_id)
+    let (owner) = ERC721_ownerOf(uint256_token_id)
+    let (self) = get_contract_address()
+    let (to_address) = l1_contract_storage.read()
+
+    ERC721_transferFrom(owner, self, uint256_token_id)
+
+    let (payload: felt*) = alloc()
+    assert payload[0] = l1_user
+    assert payload[1] = token_id
+    let (to_address) = l1_contract_storage.read()
+
+    send_message_to_l1(to_address, 2, payload)
 
     return()
 end
@@ -94,10 +109,17 @@ func bridge_to_l2{
         l2_user: felt,
         token_id: felt
     ):
+    let (l1_contract) = l1_contract_storage.read()
 
-    #
-    # TODO
-    #
+    assert from_address = l1_contract
+
+    let (uint256_token_id) = felt_to_uint256(token_id)
+    let (self) = get_contract_address()
+
+    # We can't call ERC721_transferFrom here, because that checks if get_caller_address() != 0,
+    # which is not true within an @l1_handler
+    # So we call _transfer directly
+    _transfer(self, l2_user, uint256_token_id)
 
     return ()
 end
