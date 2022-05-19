@@ -37,10 +37,31 @@ contract BridgedNFT is ERC721, Ownable {
     }
 
     function bridgeFromL2(address to, uint256 tokenId) external {
-        // TODO
+        // reconstructo the payload
+        uint256[] memory payload = new uint256[](2);
+        payload[0] = uint256(uint160(to));
+        payload[1] = tokenId;
+
+        // consumes the message
+        // implicitly means the matching message must exist
+        starknet.consumeMessageFromL2(l2Contract, payload);
+
+        _mint(to, tokenId);
     }
 
     function bridgeToL2(uint256 l2_user, uint256 tokenId) external {
-        // TODO
+        require(_isApprovedOrOwner(msg.sender, tokenId), "Not authorized");
+
+        uint256[] memory payload = new uint256[](2);
+        payload[0] = l2_user;
+        payload[1] = tokenId;
+
+        starknet.sendMessageToL2(
+            l2Contract,
+            STARKNET_SELECTOR_BRIDGE_TO_L2,
+            payload
+        );
+
+        _burn(tokenId);
     }
 }
