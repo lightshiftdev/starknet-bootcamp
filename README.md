@@ -1,4 +1,4 @@
-# Starknet Bootcamp - DevConnect Amsterdam 2022
+# Starknet Bootcamp
 
 [asdf]: https://github.com/asdf-vm/asdf
 [install-docker]: https://docs.docker.com/get-docker/
@@ -16,13 +16,14 @@
 [explorer]: https://goerli.voyager.online/
 [cairo-playground]: https://www.cairo-lang.org/playground/
 [starknet-playground]: https://starknet.io/playground/
+[activate-miami]: https://activate.build/
 
 ![Starknet Logo](./assets/starknet-logo.png)
 
-Welcome to the official repo for the [Starknet Bootcamp @ DevConnect][notion].
+Welcome to the official repo for the [Starknet Bootcamp @ DevConnect][notion] and [Starknet Workshop @ Activate Miami][activate-miami].
 
 If you're here, it's likely you signed up to join us at DevConnect Amsterdam
-2022 (or you just stumbled upon, which is fine too).
+2022 or other future events. Or you just stumbled upon this, which is fine too
 
 Details on the bootcamp itself are provided in the [Notion page][notion].
 

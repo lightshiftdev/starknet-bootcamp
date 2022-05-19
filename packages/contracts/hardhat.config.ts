@@ -26,7 +26,7 @@ const config = {
   },
   networks: {
     devnet: {
-      url: "http://localhost:5000",
+      url: "http://localhost:5050",
     },
     testnet: {
       url: "https://alpha4.starknet.io",
